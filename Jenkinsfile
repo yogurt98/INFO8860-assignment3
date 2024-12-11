@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building the application...'
-                    sh 'npm install' // Adjust based on your runtime
+                    bat  'npm install' // Adjust based on your runtime
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     echo 'Running tests...'
-                    sh 'npm test'  // Or the relevant test command
+                    bat  'npm test'  // Or the relevant test command
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     echo 'Deploying to Azure...'
-                    sh """
+                    bat  """
                         az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID
                         az functionapp deployment source config-zip --resource-group $RESOURCE_GROUP --name $FUNCTION_APP_NAME --src function.zip
                     """
