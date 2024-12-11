@@ -7,6 +7,9 @@ pipeline {
         RESOURCE_GROUP = 'MyResourceGroup'
         FUNCTION_APP_NAME = 'hello-world-function-jingxu'
     }
+    triggers {
+        githubPush()
+    }
     stages {
         stage('Build') {
             steps {
