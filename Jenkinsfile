@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building the application...'
-                    bat  'npm install' // Adjust based on your runtime
+                    bat  'npm install' 
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     echo 'Running tests...'
-                    bat  'npm test'  // Or the relevant test command
+                    bat  'npm test'  
                 }
             }
         }
