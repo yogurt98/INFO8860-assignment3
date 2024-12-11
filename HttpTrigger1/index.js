@@ -17,3 +17,4 @@ const testHandler = async (req) => {
 };
 
 module.exports.testHandler = testHandler;
+// Test auto trigger
